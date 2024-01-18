@@ -1,0 +1,39 @@
+#include <iostream>
+
+// Function for binary search
+int binarySearch(int arr[], int left, int right, int key) {
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+
+        if (arr[mid] == key) {
+            return mid; // Return the index if key is found
+        }
+
+        if (arr[mid] < key) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+
+    return -1; // Return -1 if key is not found
+}
+
+int main() {
+    int arr[] = {0, 1, 5, 9, 40, 85, 90};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int key = 40;
+
+    // Binary search requires the array to be sorted
+    // If the array is not sorted, you need to sort it first.
+
+    int result = binarySearch(arr, 0, size - 1, key);
+
+    if (result != -1) {
+        std::cout << "Binary Search: Element " << key << " found at index " << result << std::endl;
+    } else {
+        std::cout << "Binary Search: Element " << key << " not found in the array." << std::endl;
+    }
+
+    return 0;
+}
