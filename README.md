@@ -1,1 +1,1 @@
-data structures assignment sorting ,searching ,sellec
+data structures assignment insertion sort ,searching sort, selection sort
