@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+void insertion_sort(int arr[],int n)
+{
+	for(int i=1;i<=n;i++)
+	{
+		int temp=arr[i];
+		for(int j=i;j>0&&arr[j]<arr[j-1];j--)
+		{
+			arr[j]=arr[j-1];
+			arr[j-1]=temp;
+		}
+	}
+}
+
+int main() {
+	int n = 7;
+   int arr[7] = {1,9,18,15,20,84,5};
+    cout<<"array befor sorted";
+    for(int i=0; i<=6;i++){
+        cout<<arr[i]<<","<<endl;
+    }
+    
+  insertion_sort(arr,n);
+    cout<<"the element after sorting "<<endl;
+    for(int j = 0;j<=6;j++)
+	{
+    	cout<<arr[j]<<" , "<<endl;
+	}
+	return 0;
+}
